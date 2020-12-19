@@ -8,5 +8,8 @@
   "settings": {
     "terminal.integrated.shell.linux": null
   },
-  "extensions": []
+  "extensions": [
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode"
+  ],
 }
