@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  nanid-gen:
+    build: ../
+    # Overrides default command so things don't shut down after the process ends.
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    container_name: nanoid-gen
+    # as `sharp` package doesn't work on ARM platform
+    platform: linux/amd64
+    ports:
+      - '3000:3000'
+    volumes:
+      - ../:/workspace:cached
+      - /workspace/node_modules/ # for disk performance
+      - /workspace/.next/ # for disk performance
+      # for prezto
+      - ~/.zshrc:/root/.zshrc
+      - ~/.zlogin:/root/.zlogin
+      - ~/.zprofile:/root/.zprofile
+      - ~/.zenv:/root/.zenv
+      - ~/.zpreztorc:/root/.zpreztorc
+      - ~/.zprezto:/root/.zprezto

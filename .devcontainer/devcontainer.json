@@ -1,0 +1,12 @@
+{
+  "name": "nanoid-gen",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "nanid-gen",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": null
+  },
+  "extensions": []
+}
