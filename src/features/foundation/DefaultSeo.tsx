@@ -3,6 +3,9 @@ import React from 'react';
 
 export const DefaultSeo: React.FC = () => {
   return (
-    <NextSeo title="Nanoid-Gen" description="Simple online nanoid generator" />
+    <NextSeo
+      title="Nano ID Generator"
+      description="Generate multiple Nano IDs online"
+    />
   );
 };

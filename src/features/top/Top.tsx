@@ -43,10 +43,7 @@ export const Top: React.FC = () => {
 
   return (
     <div css={styles.rootContainer}>
-      <div>
-        <Typography variant="h4">Nanoid Gen</Typography>
-        <Typography>Simple online nanoid generator</Typography>
-      </div>
+      <Typography variant="h4">Nano ID Generator</Typography>
       <SeedCondition />
       <SeedTextField />
       <div css={styles.numbers}>
