@@ -3,16 +3,24 @@ import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { seedsSelector, updateSeedsManually } from './mainSlice';
 
-export const SeedTextField: React.FC = () => {
+type Props = {
+  className?: string;
+};
+
+export const SeedTextField: React.FC<Props> = ({ className }) => {
   const dispatch = useDispatch();
   const seeds = useSelector(seedsSelector);
 
-  const onTextChange = useCallback((e) => {
-    dispatch(updateSeedsManually(e.target.value));
-  }, []);
+  const onTextChange = useCallback(
+    (e) => {
+      dispatch(updateSeedsManually(e.target.value));
+    },
+    [dispatch],
+  );
 
   return (
     <TextField
+      className={className}
       label="Seeds"
       variant="outlined"
       multiline

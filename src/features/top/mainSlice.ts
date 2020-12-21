@@ -2,6 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store/store';
 
 type State = {
+  howMany: number;
+  idLength: number;
+  manualSeeds: string | null;
+  result: string;
   seedConditions: {
     numbers: boolean;
     lowercases: boolean;
@@ -9,10 +13,13 @@ type State = {
     symbols: boolean;
     lookalikes: boolean;
   };
-  manualSeeds: string | null;
 };
 
 const initialState: State = {
+  howMany: 10,
+  idLength: 21,
+  manualSeeds: null,
+  result: '',
   seedConditions: {
     numbers: true,
     lowercases: true,
@@ -20,7 +27,6 @@ const initialState: State = {
     symbols: true,
     lookalikes: false,
   },
-  manualSeeds: null,
 };
 
 type SeedType =
@@ -34,6 +40,15 @@ const shopSlice = createSlice({
   name: 'main',
   initialState,
   reducers: {
+    setHowMany: (state, action: PayloadAction<number>) => {
+      state.howMany = action.payload;
+    },
+    setIdLength: (state, action: PayloadAction<number>) => {
+      state.idLength = action.payload;
+    },
+    setResult: (state, action: PayloadAction<string>) => {
+      state.result = action.payload;
+    },
     setSeedCondition: (
       state,
       action: PayloadAction<{ seedType: SeedType; nextState: boolean }>,
@@ -56,6 +71,18 @@ const shopSlice = createSlice({
     },
   },
 });
+
+export const howManySelector = (state: RootState) => {
+  return state.main.howMany;
+};
+
+export const idLengthSelector = (state: RootState) => {
+  return state.main.idLength;
+};
+
+export const resultSelector = (state: RootState) => {
+  return state.main.result;
+};
 
 export const seedConditionsSelector = (state: RootState) => {
   return state.main.seedConditions;
@@ -101,6 +128,9 @@ export const seedsSelector = (state: RootState): string => {
 };
 
 export const {
+  setHowMany,
+  setIdLength,
+  setResult,
   setSeedCondition,
   toggleSeedCondition,
   updateSeedsManually,
