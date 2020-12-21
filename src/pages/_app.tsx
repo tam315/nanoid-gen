@@ -1,20 +1,16 @@
-import { useRouter } from 'next/router';
 import { Provider } from 'react-redux';
 import { AdBlockGuard } from '../features/ads/AdBlockGuard';
 import { GoogleAds } from '../features/ads/GoogleAds';
 import { DefaultSeo } from '../features/foundation/DefaultSeo';
-import useGaTrackPage from '../features/foundation/useGaTrackPage';
+import { GoogleAnalytics } from '../features/foundation/GoogleAnalytics';
 import { MyThemeProvider } from '../features/layout/MyThemeProvider';
 import { store } from '../features/store/store';
 
 function MyApp({ Component, pageProps }) {
-  const { asPath } = useRouter();
-
-  useGaTrackPage(asPath);
-
   return (
     <Provider store={store}>
       <MyThemeProvider>
+        <GoogleAnalytics />
         <DefaultSeo />
         <GoogleAds />
         <AdBlockGuard />
