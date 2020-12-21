@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { Provider } from 'react-redux';
+import { AdBlockGuard } from '../features/ads/AdBlockGuard';
 import { DefaultSeo } from '../features/foundation/DefaultSeo';
 import useGaTrackPage from '../features/foundation/useGaTrackPage';
 import { MyThemeProvider } from '../features/layout/MyThemeProvider';
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <MyThemeProvider>
         <DefaultSeo />
+        <AdBlockGuard />
         <Component {...pageProps} />
       </MyThemeProvider>
     </Provider>
