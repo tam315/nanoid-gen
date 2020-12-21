@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
 
-interface IProps {}
+declare global {
+  interface Window {
+    adsbygoogle: any;
+  }
+}
 
-export const AdCard: React.FC<IProps> = ({}) => {
+export const AdCard: React.FC = () => {
   useEffect(() => {
     if (!process.browser) {
       return;
@@ -16,7 +20,11 @@ export const AdCard: React.FC<IProps> = ({}) => {
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: 'inline-block', width: '1200px', height: '90px' }}
+      style={{
+        display: 'inline-block',
+        // width: '1200px',
+        height: '90px',
+      }}
       data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_AD_CLIENT}
       data-ad-slot={process.env.NEXT_PUBLIC_GOOGLE_AD_SLOT}
       data-full-width-responsive="true"

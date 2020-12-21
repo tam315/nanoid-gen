@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { Button, Typography } from '@material-ui/core';
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { AdCard } from '../ads/AdCard';
 import { HowMany } from './HowMany';
 import { IdLength } from './IdLength';
 import {
@@ -44,6 +45,7 @@ export const Top: React.FC = () => {
   return (
     <div css={styles.rootContainer}>
       <Typography variant="h4">Nano ID Generator</Typography>
+      <AdCard />
       <SeedCondition />
       <SeedTextField />
       <div css={styles.numbers}>
