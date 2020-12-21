@@ -1,5 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { customAlphabet } from 'nanoid/async';
 import { RootState } from '../store/store';
+
+const sliceName = 'main';
 
 type State = {
   howMany: number;
@@ -36,8 +39,25 @@ type SeedType =
   | 'symbols'
   | 'lookalikes';
 
+export const generateNanoIds = createAsyncThunk<
+  string,
+  { seeds: string; idLength: number; howMany: number }
+>(`${sliceName}/generateNanoIds`, async ({ seeds, idLength, howMany }) => {
+  if (seeds.length === 0) {
+    alert('Seeds strings must be at least one character');
+    throw 'seeds string length is 0';
+  }
+  const nanoid = customAlphabet(seeds, idLength);
+  const promises = [];
+  for (let i = 0; i < howMany; i++) {
+    promises.push(nanoid());
+  }
+  const ids = await Promise.all(promises);
+  return ids.join('\n');
+});
+
 const shopSlice = createSlice({
-  name: 'main',
+  name: sliceName,
   initialState,
   reducers: {
     setHowMany: (state, action: PayloadAction<number>) => {
@@ -70,6 +90,11 @@ const shopSlice = createSlice({
       state.manualSeeds = null;
     },
   },
+  extraReducers: (builder) =>
+    builder.addCase(generateNanoIds.fulfilled, (state, action) => {
+      const nanoIds = action.payload;
+      state.result = nanoIds;
+    }),
 });
 
 export const howManySelector = (state: RootState) => {

@@ -1,16 +1,15 @@
 import { css } from '@emotion/react';
 import { Button, TextField, Typography } from '@material-ui/core';
-import { customAlphabet } from 'nanoid/async';
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HowMany } from './HowMany';
 import { IdLength } from './IdLength';
 import {
+  generateNanoIds,
   howManySelector,
   idLengthSelector,
   resultSelector,
   seedsSelector,
-  setResult,
 } from './mainSlice';
 import { SeedCondition } from './SeedCondition';
 import { SeedTextField } from './SeedTextField';
@@ -22,18 +21,8 @@ export const Top: React.FC = () => {
   const idLength = useSelector(idLengthSelector);
   const result = useSelector(resultSelector);
 
-  const generateNanoIds = useCallback(async () => {
-    if (seeds.length === 0) {
-      alert('Seeds strings must be at least one character');
-      return;
-    }
-    const nanoid = customAlphabet(seeds, idLength);
-    const promises = [];
-    for (let i = 0; i < howMany; i++) {
-      promises.push(nanoid());
-    }
-    const ids = await Promise.all(promises);
-    dispatch(setResult(ids.join('\n')));
+  const onGenerateButtonClicked = useCallback(async () => {
+    dispatch(generateNanoIds({ seeds, idLength, howMany }));
   }, [dispatch, howMany, idLength, seeds]);
 
   const styles = {
@@ -63,7 +52,11 @@ export const Top: React.FC = () => {
         <IdLength />
         <HowMany />
       </div>
-      <Button color="primary" variant="contained" onClick={generateNanoIds}>
+      <Button
+        color="primary"
+        variant="contained"
+        onClick={onGenerateButtonClicked}
+      >
         generate
       </Button>
       {result.length > 0 && (
