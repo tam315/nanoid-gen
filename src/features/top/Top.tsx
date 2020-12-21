@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { Button, TextField, Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HowMany } from './HowMany';
@@ -11,6 +11,7 @@ import {
   resultSelector,
   seedsSelector,
 } from './mainSlice';
+import { Result } from './Result';
 import { SeedCondition } from './SeedCondition';
 import { SeedTextField } from './SeedTextField';
 
@@ -59,14 +60,7 @@ export const Top: React.FC = () => {
       >
         generate
       </Button>
-      {result.length > 0 && (
-        <TextField
-          label="Results"
-          variant="outlined"
-          multiline
-          value={result}
-        />
-      )}
+      {result.length > 0 && <Result value={result} />}
     </div>
   );
 };

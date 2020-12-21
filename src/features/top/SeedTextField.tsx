@@ -27,6 +27,9 @@ export const SeedTextField: React.FC<Props> = ({ className }) => {
       rowsMax={4}
       value={seeds}
       onChange={onTextChange}
+      inputProps={{
+        style: { fontFamily: 'Monaco' },
+      }}
     />
   );
 };
