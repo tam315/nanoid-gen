@@ -11,13 +11,17 @@ export const HowMany: React.FC<Props> = ({ className }) => {
   const howMany = useSelector(howManySelector);
   const dispatch = useDispatch();
 
+  const isInvalidNumber = howMany === 0;
+
   return (
     <TextField
       className={className}
       label="How many"
       type="number"
-      value={howMany}
+      value={isInvalidNumber ? '' : howMany}
       onChange={(e) => dispatch(setHowMany(+e.target.value))}
+      error={isInvalidNumber}
+      InputLabelProps={{ shrink: true }}
     />
   );
 };

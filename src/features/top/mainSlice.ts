@@ -62,10 +62,10 @@ const shopSlice = createSlice({
   initialState,
   reducers: {
     setHowMany: (state, action: PayloadAction<number>) => {
-      state.howMany = action.payload;
+      state.howMany = +action.payload;
     },
     setIdLength: (state, action: PayloadAction<number>) => {
-      state.idLength = action.payload;
+      state.idLength = Number(action.payload);
     },
     setResult: (state, action: PayloadAction<string>) => {
       state.result = action.payload;

@@ -11,6 +11,8 @@ export const SeedTextField: React.FC<Props> = ({ className }) => {
   const dispatch = useDispatch();
   const seeds = useSelector(seedsSelector);
 
+  const isSeedsEmpty = seeds.length === 0;
+
   const onTextChange = useCallback(
     (e) => {
       dispatch(updateSeedsManually(e.target.value));
@@ -30,6 +32,8 @@ export const SeedTextField: React.FC<Props> = ({ className }) => {
       inputProps={{
         style: { fontFamily: 'Monaco' },
       }}
+      InputLabelProps={{ shrink: true }}
+      error={isSeedsEmpty}
     />
   );
 };
