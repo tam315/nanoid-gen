@@ -4,6 +4,7 @@ import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AdCard } from '../ads/AdCard';
 import { GithubRibbon } from '../components/GithubRibbon/GithubRibbon';
+import { useWindowSize } from '../utils/useWindowSize';
 import { HowMany } from './HowMany';
 import { IdLength } from './IdLength';
 import {
@@ -23,6 +24,7 @@ export const Top: React.FC = () => {
   const howMany = useSelector(howManySelector);
   const idLength = useSelector(idLengthSelector);
   const result = useSelector(resultSelector);
+  const { width: windowWidth } = useWindowSize();
 
   const onGenerateButtonClicked = useCallback(async () => {
     dispatch(generateNanoIds({ seeds, idLength, howMany }));
@@ -45,7 +47,10 @@ export const Top: React.FC = () => {
 
   return (
     <div css={styles.rootContainer}>
-      <GithubRibbon href="https://github.com/junkboy0315/nanoid-gen" />
+      <GithubRibbon
+        href="https://github.com/junkboy0315/nanoid-gen"
+        size={windowWidth < 500 ? 100 : 149}
+      />
       <Typography variant="h4">Nano ID Generator</Typography>
       <AdCard />
       <SeedCondition />
