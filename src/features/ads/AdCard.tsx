@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import React, { useEffect } from 'react';
 
 declare global {
@@ -18,13 +19,18 @@ export const AdCard: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div
+      css={css`
+        overflow: hidden;
+      `}
+    >
       <ins
         className="adsbygoogle"
         style={{
-          display: 'inline-block',
-          // width: '1200px',
+          display: 'block',
+          // width: '100%',
           height: '90px',
+          margin: '0 -1rem',
         }}
         data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_AD_CLIENT}
         data-ad-slot={process.env.NEXT_PUBLIC_GOOGLE_AD_SLOT}
