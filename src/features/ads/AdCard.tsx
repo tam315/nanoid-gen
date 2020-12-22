@@ -18,16 +18,19 @@ export const AdCard: React.FC = () => {
   }, []);
 
   return (
-    <ins
-      className="adsbygoogle"
-      style={{
-        display: 'inline-block',
-        // width: '1200px',
-        height: '90px',
-      }}
-      data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_AD_CLIENT}
-      data-ad-slot={process.env.NEXT_PUBLIC_GOOGLE_AD_SLOT}
-      data-full-width-responsive="true"
-    ></ins>
+    <div>
+      <ins
+        className="adsbygoogle"
+        style={{
+          display: 'inline-block',
+          // width: '1200px',
+          height: '90px',
+        }}
+        data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_AD_CLIENT}
+        data-ad-slot={process.env.NEXT_PUBLIC_GOOGLE_AD_SLOT}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
   );
 };
