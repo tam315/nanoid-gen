@@ -52,7 +52,14 @@ export const Top: React.FC = () => {
         size={windowWidth < 500 ? 100 : 149}
       />
       <Typography variant="h4">Nano ID Generator</Typography>
-      <AdCard />
+      <div
+        css={css`
+          margin: ${windowWidth < 700 ? '0 -1rem' : null};
+          overflow: hidden;
+        `}
+      >
+        <AdCard />
+      </div>
       <SeedCondition />
       <SeedTextField />
       <div css={styles.numbers}>
