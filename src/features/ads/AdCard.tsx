@@ -21,17 +21,13 @@ export const AdCard: React.FC = () => {
   return (
     <div
       css={css`
+        margin: 0 -1rem;
         overflow: hidden;
       `}
     >
       <ins
         className="adsbygoogle"
-        style={{
-          display: 'block',
-          // width: '100%',
-          height: '90px',
-          margin: '0 -1rem',
-        }}
+        style={{ display: 'block' }}
         data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_AD_CLIENT}
         data-ad-slot={process.env.NEXT_PUBLIC_GOOGLE_AD_SLOT}
         data-ad-format="auto"
