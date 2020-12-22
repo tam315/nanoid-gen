@@ -43,10 +43,11 @@ export const generateNanoIds = createAsyncThunk<
   string,
   { seeds: string; idLength: number; howMany: number }
 >(`${sliceName}/generateNanoIds`, async ({ seeds, idLength, howMany }) => {
-  if (seeds.length === 0) {
-    alert('Seeds strings must be at least one character');
-    throw 'seeds string length is 0';
+  if (seeds.length === 0 || idLength === 0 || howMany === 0) {
+    alert('invalid setting');
+    throw 'invalid setting';
   }
+
   const nanoid = customAlphabet(seeds, idLength);
   const promises = [];
   for (let i = 0; i < howMany; i++) {
