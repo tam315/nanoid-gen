@@ -54,6 +54,7 @@ export const Top: React.FC = () => {
       <Typography variant="h4">Nano ID Generator</Typography>
       <div
         css={css`
+          height: 90px;
           margin: ${windowWidth < 700 ? '0 -1rem' : null};
           overflow: hidden;
         `}

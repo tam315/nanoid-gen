@@ -20,11 +20,9 @@ export const AdCard: React.FC = () => {
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: 'block' }}
+      style={{ display: 'inline-block', height: '90px', width: '100%' }}
       data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_AD_CLIENT}
       data-ad-slot={process.env.NEXT_PUBLIC_GOOGLE_AD_SLOT}
-      data-ad-format="auto"
-      data-full-width-responsive="true"
     ></ins>
   );
 };
