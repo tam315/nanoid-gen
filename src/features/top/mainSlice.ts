@@ -5,8 +5,8 @@ import { RootState } from '../store/store';
 const sliceName = 'main';
 
 type State = {
-  howMany: number | '';
-  idLength: number | '';
+  howMany: number | 0;
+  idLength: number | 0;
   manualSeeds: string | null;
   result: string;
   seedConditions: {
