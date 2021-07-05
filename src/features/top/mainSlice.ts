@@ -125,13 +125,8 @@ export const seedsSelector = (state: RootState): string => {
   const symbolString = '_-';
   const lookalikeString = /(1|l|I|0|O|o|u|v|5|S|s)/g;
 
-  const {
-    numbers,
-    lowercases,
-    uppercases,
-    symbols,
-    lookalikes,
-  } = state.main.seedConditions;
+  const { numbers, lowercases, uppercases, symbols, lookalikes } =
+    state.main.seedConditions;
 
   let seeds = '';
 

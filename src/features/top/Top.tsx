@@ -2,7 +2,6 @@ import { css } from '@emotion/react';
 import { Button, Typography } from '@material-ui/core';
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AdCard } from '../ads/AdCard';
 import { GithubRibbon } from '../components/GithubRibbon/GithubRibbon';
 import { useWindowSize } from '../utils/useWindowSize';
 import { HowMany } from './HowMany';
@@ -52,15 +51,6 @@ export const Top: React.FC = () => {
         size={windowWidth < 500 ? 100 : 149}
       />
       <Typography variant="h4">Nano ID Generator</Typography>
-      <div
-        css={css`
-          height: 90px;
-          margin: ${windowWidth < 700 ? '0 -1rem' : null};
-          overflow: hidden;
-        `}
-      >
-        <AdCard />
-      </div>
       <SeedCondition />
       <SeedTextField />
       <div css={styles.numbers}>
