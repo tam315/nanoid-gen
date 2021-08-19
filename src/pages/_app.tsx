@@ -1,6 +1,4 @@
 import { Provider } from 'react-redux';
-import { AdBlockGuard } from '../features/ads/AdBlockGuard';
-import { GoogleAds } from '../features/ads/GoogleAds';
 import { DefaultSeo } from '../features/foundation/DefaultSeo';
 import { GoogleAnalytics } from '../features/foundation/GoogleAnalytics';
 import { MyThemeProvider } from '../features/layout/MyThemeProvider';
@@ -12,8 +10,6 @@ function MyApp({ Component, pageProps }) {
       <MyThemeProvider>
         <GoogleAnalytics />
         <DefaultSeo />
-        <GoogleAds />
-        <AdBlockGuard />
         <Component {...pageProps} />
       </MyThemeProvider>
     </Provider>
