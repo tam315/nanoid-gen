@@ -3,8 +3,16 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
-      "updateTypes": ["major"],
+      "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "labels": ["type: minor"]
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "labels": ["type: patch"]
     }
   ]
 }
