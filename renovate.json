@@ -4,16 +4,11 @@
   "separateMinorPatch": true,
   "packageRules": [
     {
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": ["major", "minor"],
       "enabled": false
     },
     {
-      "matchUpdateTypes": ["minor"],
-      "labels": ["type: minor"]
-    },
-    {
-      "matchUpdateTypes": ["patch"],
-      "labels": ["type: patch"]
+      "matchUpdateTypes": ["patch"]
     }
   ]
 }
