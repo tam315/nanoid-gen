@@ -1,15 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "separateMinorPatch": true,
   "packageRules": [
     {
       "matchUpdateTypes": ["major", "minor"],
       "enabled": false
     },
     {
-      "matchUpdateTypes": ["patch"],
-      "automerge": true
+      "matchUpdateTypes": ["patch"]
     },
     {
       "groupName": "material-ui",
