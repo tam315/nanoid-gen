@@ -1,11 +1,9 @@
-import { NextSeo } from 'next-seo';
+import Head from "next/head";
 import React from 'react';
 
 export const DefaultSeo: React.FC = () => {
-  return (
-    <NextSeo
-      title="Nano ID Generator"
-      description="Generate multiple Nano IDs online"
-    />
-  );
+  return <Head>
+    <title>Nano ID Generator</title>
+    <meta name="description" content="Generate multiple Nano IDs online" />
+  </Head>;
 };

@@ -1,5 +1,5 @@
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
-import React, { useEffect } from 'react';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import React from 'react';
 import { myTheme } from './theme';
 
 type Props = {
@@ -7,12 +7,6 @@ type Props = {
 };
 
 export const MyThemeProvider: React.FC<Props> = ({ children }) => {
-  useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    jssStyles?.parentElement?.removeChild(jssStyles);
-  }, []);
-
   return (
     <ThemeProvider theme={myTheme}>
       <CssBaseline />

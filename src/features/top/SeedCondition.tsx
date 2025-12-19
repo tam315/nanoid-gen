@@ -3,7 +3,7 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
-} from '@material-ui/core';
+} from '@mui/material';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { seedConditionsSelector, toggleSeedCondition } from './mainSlice';

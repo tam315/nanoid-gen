@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Typography } from '@mui/material';
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../store/store';
 import { GithubRibbon } from '../components/GithubRibbon/GithubRibbon';
 import { useWindowSize } from '../utils/useWindowSize';
 import { HowMany } from './HowMany';
@@ -18,7 +19,7 @@ import { SeedCondition } from './SeedCondition';
 import { SeedTextField } from './SeedTextField';
 
 export const Top: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const seeds = useSelector(seedsSelector);
   const howMany = useSelector(howManySelector);
   const idLength = useSelector(idLengthSelector);

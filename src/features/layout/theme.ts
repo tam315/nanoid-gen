@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core';
+import { createTheme } from '@mui/material/styles';
 
-export const myTheme = createMuiTheme({
+export const myTheme = createTheme({
   palette: {
     // type: 'dark',
     primary: { main: '#7A5D3D' },
