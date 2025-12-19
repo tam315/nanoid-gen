@@ -1,4 +1,4 @@
-import { TextField } from '@material-ui/core';
+import { TextField } from '@mui/material';
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { seedsSelector, updateSeedsManually } from './mainSlice';
@@ -26,7 +26,7 @@ export const SeedTextField: React.FC<Props> = ({ className }) => {
       label="Seeds"
       variant="outlined"
       multiline
-      rowsMax={4}
+      maxRows={4}
       value={seeds}
       onChange={onTextChange}
       inputProps={{

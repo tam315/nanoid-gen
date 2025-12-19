@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { customAlphabet } from 'nanoid/async';
+import { customAlphabet } from 'nanoid';
 import { RootState } from '../store/store';
 
 const sliceName = 'main';

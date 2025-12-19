@@ -1,0 +1,15 @@
+{
+  "name": "nanoid-gen",
+  "compatibility_date": "2025-12-16",
+  "assets": {
+    "directory": "./out"
+  },
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    {
+      "pattern": "nanoid.yuuniworks.com",
+      "custom_domain": true
+    }
+  ]
+}
