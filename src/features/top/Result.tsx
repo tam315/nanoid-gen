@@ -18,9 +18,7 @@ export const Result: React.FC<Props> = ({ value }) => {
   return (
     <TextField
       label="Results"
-      inputProps={{
-        style: { fontFamily: 'Monaco' },
-      }}
+      slotProps={{ htmlInput: { style: { fontFamily: 'Monaco' } } }}
       variant="outlined"
       multiline
       value={value}

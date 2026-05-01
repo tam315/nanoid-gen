@@ -29,10 +29,10 @@ export const SeedTextField: React.FC<Props> = ({ className }) => {
       maxRows={4}
       value={seeds}
       onChange={onTextChange}
-      inputProps={{
-        style: { fontFamily: 'Monaco' },
+      slotProps={{
+        htmlInput: { style: { fontFamily: 'Monaco' } },
+        inputLabel: { shrink: true },
       }}
-      InputLabelProps={{ shrink: true }}
       error={isSeedsEmpty}
     />
   );
