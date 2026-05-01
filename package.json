@@ -8,30 +8,27 @@
     "start": "next start"
   },
   "dependencies": {
-    "@babel/core": "^7.28.5",
+    "@babel/core": "^7.29.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.6",
-    "@mui/material": "^7.3.6",
+    "@mui/icons-material": "^9.0.0",
+    "@mui/material": "^9.0.0",
     "@reduxjs/toolkit": "^2.11.2",
     "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.0",
-    "nanoid": "^5.1.6",
-    "next": "^16.1.0",
-    "prettier": "^3.7.4",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "eslint-config-next": "^16.2.4",
+    "nanoid": "^5.1.11",
+    "next": "^16.2.4",
+    "prettier": "^3.8.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "react-redux": "^9.2.0",
-    "typescript": "^5.9.3"
-  },
-  "volta": {
-    "node": "24.11.0"
+    "typescript": "^6.0.3"
   },
   "engines": {
-    "node": "24.11.0"
+    "node": "22.16.0"
   },
   "devDependencies": {
-    "@types/node": "^24.10.4",
-    "@types/react": "^19.2.7"
+    "@types/node": "^22.16.5",
+    "@types/react": "^19.2.14"
   }
 }

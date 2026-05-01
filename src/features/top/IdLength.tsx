@@ -16,7 +16,7 @@ export const IdLength: React.FC = () => {
       value={isInvalidNumber ? '' : idLength}
       onChange={(e) => dispatch(setIdLength(+e.target.value))}
       error={isInvalidNumber}
-      InputLabelProps={{ shrink: true }}
+      slotProps={{ inputLabel: { shrink: true } }}
     />
   );
 };

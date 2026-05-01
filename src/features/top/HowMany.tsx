@@ -21,7 +21,7 @@ export const HowMany: React.FC<Props> = ({ className }) => {
       value={isInvalidNumber ? '' : howMany}
       onChange={(e) => dispatch(setHowMany(+e.target.value))}
       error={isInvalidNumber}
-      InputLabelProps={{ shrink: true }}
+      slotProps={{ inputLabel: { shrink: true } }}
     />
   );
 };
