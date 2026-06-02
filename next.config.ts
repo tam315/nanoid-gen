@@ -2,9 +2,12 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  compiler:{
-    emotion: true
-  }
+  turbopack: {
+    root: process.cwd(),
+  },
+  compiler: {
+    emotion: true,
+  },
 };
 
 export default nextConfig;
