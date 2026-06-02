@@ -1,21 +1,19 @@
-import Head from 'next/head';
+import Script from 'next/script';
 import React from 'react';
 
 export const GoogleAnalytics: React.FC = () => {
   return (
-    <Head>
-      <script
-        async
+    <>
+      <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-GE7MLCECZP"
-      ></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-GE7MLCECZP');`,
-        }}
-      ></script>
-    </Head>
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-GE7MLCECZP');`}
+      </Script>
+    </>
   );
 };
