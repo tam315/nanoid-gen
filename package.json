@@ -23,10 +23,10 @@
     "typescript": "^6.0.3"
   },
   "engines": {
-    "node": "26.4.0"
+    "node": "24.18.0"
   },
   "devDependencies": {
-    "@types/node": "^26.0.1",
+    "@types/node": "^24.13.2",
     "@types/react": "^19.2.17"
   }
 }
