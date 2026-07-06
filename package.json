@@ -28,5 +28,9 @@
   "devDependencies": {
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true
   }
 }
