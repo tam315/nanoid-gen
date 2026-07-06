@@ -23,7 +23,7 @@
     "typescript": "^6.0.3"
   },
   "engines": {
-    "node": "24.16.0"
+    "node": "26.4.0"
   },
   "devDependencies": {
     "@types/node": "^22.16.5",
