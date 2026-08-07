@@ -33,11 +33,7 @@ const initialState: State = {
 };
 
 type SeedType =
-  | 'numbers'
-  | 'lowercases'
-  | 'uppercases'
-  | 'symbols'
-  | 'lookalikes';
+  'numbers' | 'lowercases' | 'uppercases' | 'symbols' | 'lookalikes';
 
 export const generateNanoIds = createAsyncThunk<
   string,

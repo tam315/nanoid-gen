@@ -2,14 +2,14 @@
   "name": "nanoid-gen",
   "compatibility_date": "2026-07-06",
   "assets": {
-    "directory": "./out"
+    "directory": "./out",
   },
   "workers_dev": true,
   "preview_urls": true,
   "routes": [
     {
       "pattern": "nanoid.yuuniworks.com",
-      "custom_domain": true
-    }
-  ]
+      "custom_domain": true,
+    },
+  ],
 }

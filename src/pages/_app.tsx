@@ -5,18 +5,15 @@ import { GoogleAnalytics } from '../features/foundation/GoogleAnalytics';
 import { MyThemeProvider } from '../features/layout/MyThemeProvider';
 import { store } from '../features/store/store';
 
-function MyApp({
-  Component,
-  pageProps,
-}: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-      <Provider store={store}>
-        <MyThemeProvider>
-          <GoogleAnalytics />
-          <DefaultSeo />
-          <Component {...pageProps} />
-        </MyThemeProvider>
-      </Provider>
+    <Provider store={store}>
+      <MyThemeProvider>
+        <GoogleAnalytics />
+        <DefaultSeo />
+        <Component {...pageProps} />
+      </MyThemeProvider>
+    </Provider>
   );
 }
 
